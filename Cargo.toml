@@ -2,6 +2,8 @@
 name = "hash_checker"
 version = "0.1.0"
 edition = "2021"
+repository = "https://github.com/Yekong995/HashChecker"
+description = "A simple tool to check the hash of a file"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
@@ -12,3 +14,9 @@ md-5 = "0.10.5"
 digest = "0.10.7"
 clap = {version = "4.4.3", features = ["derive"]}
 colored = "2.0.4"
+
+[profile.release]
+opt-level = 3
+lto = "thin"
+strip = true
+codegen-units = 1
